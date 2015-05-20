@@ -1,5 +1,4 @@
 #!/bin/bash
-# source <(wget -qO- https://git.io/vTkKA)
 
 set -e
 
