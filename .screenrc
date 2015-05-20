@@ -1,0 +1,13 @@
+autodetach on
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%{= kK}%{w}%H %{K}%= %{= kw}%?%-Lw%?%{B}(%{W}%n*%f %t%?(%u)%?%{B})%{w}%?%+Lw%?%?%= %{K}%{B} %{w}%c%{K}'
+startup_message off
+termcapinfo xterm ti@:te@
+defscrollback 100000
+altscreen on
+nonblock on
+msgwait 2
+msgminwait 0
+vbell off
+term putty-256color
