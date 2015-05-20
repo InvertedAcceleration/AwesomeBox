@@ -20,6 +20,11 @@ echo -e "\e[0;34m ╚═╝  ╚═╝╚═╝  ╚═══╝    ╚═╝  �
 echo ""
 
 echo -e "\e[0;34m • Installing core tools.\033[0m"
+
+sudo apt-get update > /dev/null
+sudo apt-get -q -y install python-software-properties > /dev/null
+sudo add-apt-repository -y ppa:git-core/ppa > /dev/null 2>&1
+
 sudo apt-get update > /dev/null
 sudo apt-get -q -y install vim git ncurses-term screen htop > /dev/null
 
@@ -51,7 +56,7 @@ do
 done
 
 echo -e "\e[0;34m • Installing vundle.\033[0m"
-git clone -q https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone -q https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim > /dev/null 2>&1
 
 echo -e "\e[0;34m • Installing vim plugins.\033[0m"
 vim +PluginInstall +qall
