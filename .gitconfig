@@ -1,0 +1,15 @@
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    ui = 1
+[alias]
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    s = status -sb
+    d = diff --word-diff
+[push]
+    default = upstream
+[rerere]
+    enabled = true
+[include]
+    path = ~/.gituserconfig

@@ -1,0 +1,31 @@
+alias AwesomeBox='cd ~/AwesomeBox && git pull -q && git reset -q --hard origin/master && ./AwesomeBox.sh && cd - > /dev/null'
+
+alias l='ls -lAsh'
+
+alias nd='sudo ntpdate pool.ntp.org'
+
+alias gl="git l"
+alias gg="git grep -n"
+alias gd="git d"
+alias gs="git s"
+alias gitsha="git rev-parse --short HEAD"
+
+alias dms='app/console doctrine:migrations:status'
+alias dmv='app/console doctrine:migrations:status --show-versions'
+alias dmm='app/console doctrine:migrations:migrate'
+alias dmd='app/console doctrine:migrations:diff'
+alias dmw="dmv | grep 'not migrated' | awk '{ print \$4 }' | cut -c2-15 | xargs -L 1 app/console do:mi:exec --no-interaction --up"
+alias dbReset="app/console doctrine:database:drop --force && app/console doctrine:database:create && app/console doctrine:migrations:migrate --no-interaction && app/console doctrine:fixtures:load --no-interaction"
+
+alias testCount='grep -rn --include=\*.feature Scenario src/ | wc -l'
+
+source /etc/bash_completion.d/git-prompt
+
+GIT_PS1_SHOWDIRTYSTATE=true
+
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+
+export VISUAL=vim
+export EDITOR=vim
+
+eval `dircolors ~/.dir_colors`
