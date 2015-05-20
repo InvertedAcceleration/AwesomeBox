@@ -19,7 +19,7 @@ alias dbReset="app/console doctrine:database:drop --force && app/console doctrin
 
 alias testCount='grep -rn --include=\*.feature Scenario src/ | wc -l'
 
-source /etc/bash_completion.d/git
+source /etc/bash_completion.d/git-prompt
 
 GIT_PS1_SHOWDIRTYSTATE=true
 
