@@ -38,20 +38,19 @@ done
 
 mkdir -p ~/.vim/{backup,temp}
 
-BASE_DIR=$( cd "$( dirname "$0" )" && pwd )
 DOT_FILES_TO_SYM_LINK=('.vimrc' '.gitconfig' '.dir_colors' '.bashrc_extras' '.screenrc')
 
 for DOT_FILE in ${DOT_FILES_TO_SYM_LINK[@]}
 do
     rm -f ~/$DOT_FILE
-    ln -s $BASE_DIR/$DOT_FILE ~
+    ln -s ~/AwesomeBox/$DOT_FILE ~
 done
 
 DOT_FILES_TO_COPY=('.gituserconfig')
 
 for DOT_FILE in ${DOT_FILES_TO_COPY[@]}
 do
-    cp -n $BASE_DIR/$DOT_FILE ~
+    cp -n ~/AwesomeBox/$DOT_FILE ~
 done
 
 echo -e "\e[0;34m • Installing vundle.\033[0m"
