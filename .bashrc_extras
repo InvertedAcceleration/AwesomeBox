@@ -1,4 +1,4 @@
-alias AwesomeBox='cd ~/AwesomeBox && git pull -q && git reset -q --hard origin/master && ./AwesomeBox.sh && cd -'
+alias AwesomeBox='cd ~/AwesomeBox && git pull -q && git reset -q --hard origin/master && ./AwesomeBox.sh && cd - > /dev/null'
 
 alias l='ls -lAsh'
 
