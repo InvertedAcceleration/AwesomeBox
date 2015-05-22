@@ -1,5 +1,5 @@
 #!/bin/bash
-# source <(wget -qO- https://raw.githubusercontent.com/InvertedAcceleration/AwesomeBox/master/Install.sh)
+# source <(wget -qO- http://git.io/vTPeH)
 
 echo -e "\e[0;34m • Removing older versions of AwesomeBox.\033[0m"
 
