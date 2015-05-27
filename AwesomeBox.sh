@@ -16,6 +16,22 @@ echo -e "\e[0;34m ██║  ██║██║ ╚████║    ██║ 
 echo -e "\e[0;34m ╚═╝  ╚═╝╚═╝  ╚═══╝    ╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝    ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝\033[0m"
 echo ""
 
+if [ -f ~/.gituserconfig ]
+then
+    DEFAULT_GIT_USERNAME="`grep 'name = ' ~/.gituserconfig | awk -F= '{print $2};' | tr -d '[[:space:]]'`"
+    DEFAULT_GIT_EMAIL="`grep 'email = ' ~/.gituserconfig | awk -F= '{print $2};' | tr -d '[[:space:]]'`"
+fi
+
+echo -n -e "\e[0;32m • Enter your git username [${DEFAULT_GIT_USERNAME}]: "
+read GIT_USERNAME
+
+[ -z $GIT_USERNAME ] && [ -z $DEFAULT_GIT_USERNAME ] && GIT_USERNAME=$DEFAULT_GIT_USERNAME
+
+echo -n -e "\e[0;32m • Enter your git email [${DEFAULT_GIT_EMAIL}]: "
+read GIT_EMAIL
+
+[ -z $GIT_EMAIL ] && [ -z $DEFAULT_GIT_EMAIL ] && GIT_EMAIL=$DEFAULT_GIT_EMAIL
+
 echo -e "\e[0;34m • Installing core tools.\033[0m"
 
 sudo apt-get update > /dev/null
@@ -59,7 +75,8 @@ vim +PluginInstall +qall
 
 echo -e "\e[0;34m • Updating local config files.\033[0m"
 
-vim ~/.gituserconfig
+sed -i "s/GIT_USERNAME/$GIT_USERNAME/" ~/.gituserconfig
+sed -i "s/GIT_EMAIL/$GIT_EMAIL/" ~/.gituserconfig
 
 cat ~/.bashrc | grep -v "source ~/.bashrc_extras" | tee ~/.bashrc > /dev/null
 echo "source ~/.bashrc_extras" | tee -a ~/.bashrc > /dev/null
