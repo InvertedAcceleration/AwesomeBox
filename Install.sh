@@ -1,5 +1,5 @@
 #!/bin/bash
-# source <(wget -qO- http://git.io/vTPeH)
+# source <(wget -qO- https://git.io/vTPeH)
 
 echo -e "\e[0;34m • Removing older versions of AwesomeBox.\033[0m"
 
