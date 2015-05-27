@@ -41,7 +41,7 @@ DOT_FILES_TO_SYM_LINK=('.vimrc' '.gitconfig' '.dir_colors' '.bashrc_extras' '.sc
 for DOT_FILE in ${DOT_FILES_TO_SYM_LINK[@]}
 do
     rm -f ~/$DOT_FILE
-    ln -s ~/AwesomeBox/$DOT_FILE ~
+    ln -s ~/AwesomeBox/dotFiles/$DOT_FILE ~
 done
 
 DOT_FILES_TO_COPY=('.gituserconfig')
