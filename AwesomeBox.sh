@@ -23,7 +23,7 @@ sudo apt-get -q -y install python-software-properties > /dev/null
 sudo add-apt-repository -y ppa:git-core/ppa > /dev/null 2>&1
 
 sudo apt-get update > /dev/null
-sudo apt-get -q -y install vim git ncurses-term screen htop > /dev/null
+sudo apt-get -q -y install vim git ncurses-term screen htop bash-completion > /dev/null
 
 echo -e "\e[0;34m • Cleaning up awesomeless settings.\033[0m"
 
