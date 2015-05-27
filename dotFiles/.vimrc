@@ -74,6 +74,7 @@ set showcmd
 set showmatch
 set noshowmode
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set expandtab
 set nomore
@@ -84,16 +85,12 @@ set wildmenu
 set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
 set wildmode=list:longest
 set completeopt=menuone
-set expandtab
 set formatoptions=rq
 set ignorecase
 set infercase
 set nowrap
 set shiftround
 set smartcase
-set shiftwidth=4
-set softtabstop=4
-set tabstop=8
 set nofoldenable
 
 let mapleader = ' '
