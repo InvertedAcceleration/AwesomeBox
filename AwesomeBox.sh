@@ -48,7 +48,7 @@ DOT_FILES_TO_COPY=('.gituserconfig')
 
 for DOT_FILE in ${DOT_FILES_TO_COPY[@]}
 do
-    cp -n ~/AwesomeBox/$DOT_FILE ~
+    cp -n ~/AwesomeBox/dotFiles/$DOT_FILE ~
 done
 
 echo -e "\e[0;34m • Installing vundle.\033[0m"
