@@ -10,4 +10,4 @@ nonblock on
 msgwait 2
 msgminwait 0
 vbell off
-term putty-256color
+term screen-256color
