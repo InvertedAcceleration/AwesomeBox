@@ -43,6 +43,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'evidens/vim-twig'
 Plugin 'StanAngeloff/php.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
 
 call vundle#end()
 filetype plugin indent on
