@@ -29,3 +29,30 @@ export VISUAL=vim
 export EDITOR=vim
 
 eval `dircolors ~/.dir_colors`
+
+patchgen () {
+    patchgen_usage() { echo "Usage: patchgen [-c] <description>" 1>&2; }
+
+    local OPTIND o c CACHED_OPT DESCRIPTION
+    while getopts ":c" o; do
+        case "${o}" in
+            c)
+                CACHED_OPT=" --cached"
+                ;;
+            ?)
+                patchgen_usage
+                return
+                ;;
+        esac
+    done
+    shift $((OPTIND-1))
+
+    if [[ "$#" -ne 1 ]]; then
+        patchgen_usage
+        return
+    fi
+
+    DESCRIPTION=$1
+
+    git diff --no-prefix${CACHED_OPT} > ~/patches/`date +%Y-%m-%d`--`echo ${DESCRIPTION} | sed 's,/,-,g' | sed 's, ,_,g'`--`git symbolic-ref --short -q HEAD | sed 's,/,-,g'`--`gitsha`.patch
+}
