@@ -80,7 +80,7 @@ git clone -q https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim >
 echo -e "\e[0;34m • Installing vim plugins.\033[0m"
 vim +PluginUpdate +qall
 
-cat ~/.bashrc | grep -v "source ~/.bashrc_extras" | tee ~/.bashrc > /dev/null
+sed -i "/source ~\/.bashrc_extras/d" ~/.bashrc > /dev/null
 echo "source ~/.bashrc_extras" | tee -a ~/.bashrc > /dev/null
 
 source ~/.bashrc_extras
