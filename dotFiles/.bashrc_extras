@@ -10,12 +10,12 @@ alias gd="git d"
 alias gs="git s"
 alias gitsha="git rev-parse --short HEAD"
 
-alias dms='app/console doctrine:migrations:status'
-alias dmv='app/console doctrine:migrations:status --show-versions'
-alias dmm='app/console doctrine:migrations:migrate'
-alias dmd='app/console doctrine:migrations:diff'
-alias dmw="dmv | grep 'not migrated' | awk '{ print \$4 }' | cut -c2-15 | xargs -L 1 app/console do:mi:exec --no-interaction --up"
-alias dbReset="app/console doctrine:database:drop --force && app/console doctrine:database:create && app/console doctrine:migrations:migrate --no-interaction && app/console doctrine:fixtures:load --no-interaction"
+alias dms='bin/console doctrine:migrations:status'
+alias dmv='bin/console doctrine:migrations:status --show-versions'
+alias dmm='bin/console doctrine:migrations:migrate'
+alias dmd='bin/console doctrine:migrations:diff'
+alias dmw="dmv | grep 'not migrated' | awk '{ print \$4 }' | cut -c2-15 | xargs -L 1 bin/console do:mi:exec --no-interaction --up"
+alias dbReset="bin/console doctrine:database:drop --force && bin/console doctrine:database:create && bin/console doctrine:migrations:migrate --no-interaction && bin/console doctrine:fixtures:load --no-interaction"
 
 alias testCount='grep -rn --include=\*.feature Scenario src/ | wc -l'
 
